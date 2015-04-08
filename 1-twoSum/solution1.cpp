@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
     //int numbers[] = {7, 2, 11, 15};
     //int target = 9;
     int numbers[] = {3,2,4};
-    int target=6;
+    int target =6;
 
     vector<int> vNumbers(numbers, numbers + 5);
     Solution().twoSum(vNumbers, target);
