@@ -24,16 +24,14 @@ public:
                 table.insert(pair<char, int>(s[i], i));
             }
             else {
+                int tmp = lengths[lengths.size()-1] + 1;
                 tmpLength = i - table[s[i]];
+                tmpLength = tmpLength > tmp ? tmp : tmpLength;
                 lengths.push_back(tmpLength);
                 table[s[i]] = i;
             }
             result = tmpLength > result ? tmpLength : result;
         }
-
-        cout<<lengths.size()<<"+"<<endl;
-        for(unsigned int i = 0; i < lengths.size(); i++)
-            cout<<lengths[i]<<endl;
         return result;
     }
 };
