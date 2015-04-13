@@ -11,27 +11,29 @@ public:
         for(int i = 0; i < nRows; i++) {
             unsigned int step = 2*(nRows-1);
             unsigned int j = 0;
-
-            while(i == 0 && step*j < s.size()) {
-                result += s[step*j];
+            unsigned base = 0;
+            while(i == 0
+                && (base + step*j) < s.size()) {
+                result += s[base + step*j];
                 j++;
             }
             
-            step = 2*(nRows-i-1) + i+1;
             j = 0;
-            unsigned int index = i + step*j;
-            while(i > 0 && i < nRows-1 && index < s.size()) {
-                index = j % 2 == 0 ? i+step*(j/2) : i+step*((j+1)/2)-(i+1);
-                if(index < s.size()) result += s[index];
+            base = i;
+            while(i > 0
+                && i < nRows-1
+                && base < s.size()) {
+                result += s[base];
+                base += j % 2 == 0 ? 2*(nRows-i-1) : 2*i;
                 j++;
             }
 
             step = 2*(nRows-1);
-            index = nRows-1;
+            base = nRows-1;
             j = 0;
-            while(i == nRows-1 && index < s.size()) {
-                index = nRows-1 + step*j;
-                if(index < s.size()) result += s[index];
+            while(i == nRows-1 
+                && (base + step*j) < s.size()) {
+                result += s[base + step*j];
                 j++;
             }
 
