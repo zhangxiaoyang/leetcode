@@ -1,6 +1,5 @@
 #include <iostream>
 #include <stdio.h>
-#include <string.h>
 #include <string>
 #include <map>
 #define UINT unsigned int
