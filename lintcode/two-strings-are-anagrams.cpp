@@ -1,7 +1,7 @@
+#include <assert.h>
+
 #include <string>
 #include <limits.h>
-#include <assert.h>
-#include <iostream>
 using namespace std;
 
 class Solution {
