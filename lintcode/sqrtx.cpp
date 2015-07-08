@@ -8,27 +8,20 @@ public:
      * @return: The sqrt of x
      */
     int sqrt(int x) {
-        int left = 1;
-        int right = x;
-        while (left < right - 1) {
-            int mid = left + (right - right) / 2;
-            int quo = x / mid;
-            
-            if (mid == quo) {
-                return quo;
-            }
-            else if (mid > quo) {
-                right = mid;
-            }
-            else {
-                left = mid;
-            }
+        long i = 0;
+        long j = x;
+        while (i <= j) {
+            long mid = i + (j - i) / 2;
+            if (x < mid*mid)
+                j = mid - 1;
+            else
+                i = mid + 1;
         }
 
-        return left;
+        return (int)j;
     }
 };
 
 int main(int argc, char* argv[]) {
-    Solution().sqrt(x);
+    cout<<Solution().sqrt(128);
 }
